@@ -1,6 +1,48 @@
-# Project Template
+# Project Name
+met-cs665-4-JoeyParshley
+# Your Information
+Joey Parshley
+joeyparshley@gmail.com
 
-This is a Java Maven Project Template
+# Project Information
+This project builds the beginning of a Sport Team Manager. Ther basic concept is an application that Coach 
+of any Sport (currently [Baseball, BasketBall, Football, Hockey]) and mangage there team. Currently the coach can
+enter the player information and build a team. The can add the Sport type to the players and use that to calculate that
+players Combined Statistic which is there offensive and defensive statics combined. 
+
+I used an Abstract Factory to create a Factory for creating SportFactories. This gives us the flexibility
+of adding future sports to the application. Each factory would be responsible for its own sport rules and algortithms
+to calculate the Offensive and Defensive statistics for that particular sport. These stats would have their own 
+Offensive and Defensive Statistics. The player is responsible for its statistics.
+
+I also intruduce the Iterator Pattern to allow the Sport manager to iterate through the players on its teams and 
+get the Combined stats. This pattern allows us to wrap the iterator behavior for each team.
+
+## Tasks
+### Design Goals
+The design goals for this project was to create a Generic Management Application that would:
+* create a generic sport interface that would contain all the common behavior between the different sports
+* Then sport specific factories can be created and given the responsibility of managing the specific sport rules
+* The Teams would be aggregation of players (currently as an array but they could be any collection).
+* Each player would be responsible for maintaining their offensive and defensive statistics
+* The players statistics would be dependent on which sport the player is playing
+
+### Flexibility
+The flexibility of this implementation is present in the how the Iteration complexity has been isolated to the 
+created Iterators. This allows for teams (collections) to be of any type of collection. The createIterator method for that sport
+would just need to be update with teh collection specific iterator processes. But the rest of the application
+would be untouched.
+In addition the use of the Abstract Factory for creating the various sports allows the ability to add new SPorts down 
+the road with their own rules and own type of statistics.
+
+Grouping the Sports code in its own package allows for a better understandability that this code is related.
+
+## Implementation details
+The UML can be found in the root folder `Assignment4-UML.pdf`
+
+![Project-UML](Project-UML.pdf)
+
+#### Describe what pattern you used and why?
 
 
 # How to compile the project
@@ -102,7 +144,3 @@ mvn checkstyle:checkstyle
 ```bash
 target/site/checkstyle.html
 ```
-
-
-
-

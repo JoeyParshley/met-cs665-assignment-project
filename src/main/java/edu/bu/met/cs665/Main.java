@@ -1,6 +1,6 @@
 package edu.bu.met.cs665;
 
-import edu.bu.met.cs665.example1.Person;
+import edu.bu.met.cs665.project.Player;
 import org.apache.log4j.Logger;
 // import org.apache.log4j.PropertyConfigurator;
 
@@ -21,10 +21,6 @@ public class Main {
     // PropertyConfigurator.configure("log4j.properties");
 
     // Let us create an object of the Main class.
-    Main m = new Main();
-
-    logger.info(m.doIt());
-
     logger.trace("This is a Trace Message for illustration purpose only! This is the highest level which prints all trace, debug, info, warn, error and fatal logs.");
     logger.debug("This is a Debug Message for illustration purpose only! This log level prints debug, info, warn, error and fatal logs.");
     logger.info("This is a Info Message for illustration purpose only! This log level prints info, warn, error and fatal logs.");
@@ -33,12 +29,4 @@ public class Main {
     logger.fatal("This is a Fatal Message for illustration purpose only! This log level is the loweest level, and prints only fatal logs.");
 
   }
-
-
-
-  private String doIt() {
-    Person student = new Person("John", "Doe");
-    return student.getLastName() + ',' + student.getLastName();
-  }
-
 }
